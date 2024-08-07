@@ -498,8 +498,8 @@ Actual  : ${@{prop.verify.md5.actual}}
 	 -   target/install-artifact-staging
 	 -->
 	<target name="install-artifact-remote">
-		<artifact:mvn mavenversion="3.2.5"  failonerror="yes" fork="yes" clonevm="yes">
-			<arg value="org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy-file" />
+		<artifact:mvn mavenversion="3.9.8"  failonerror="yes" fork="yes" clonevm="yes">
+			<arg value="org.apache.maven.plugins:maven-deploy-plugin:3.1.2:deploy-file" />
 			<arg value="-s" />
 			<arg value="${alt.maven.settings}" />
 			<arg value="-Durl=${alt.maven.repo.url}" />
