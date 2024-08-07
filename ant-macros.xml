@@ -1,4 +1,4 @@
-<project xmlns:resolver="antlib:org.apache.maven.resolver.ant">
+<project xmlns:repo="antlib:org.apache.maven.resolver.ant">
 	<typedef resource="org/apache/maven/resolver/ant/antlib.xml"
     	uri="antlib:org.apache.maven.resolver.ant" onerror="ignore"/>
 	
@@ -498,12 +498,12 @@ Actual  : ${@{prop.verify.md5.actual}}
 	 -   target/install-artifact-staging
 	 -->
 	<target name="install-artifact-remote">
-		<resolver:deploy>
-			<settings file="${alt.maven.settings}"/>
+		<repo:settings file="${alt.maven.settings}"/>
+		<repo:deploy>
 			<remoterepo id="${alt.maven.repo.id}" url="${alt.maven.repo.url}"/>
 			<pom file="${basedir}/target/${artifactId}-${version}.pom"/>
 			<artifact file="${basedir}/target/${artifactId}-${version}.jar"/>
-		</resolver:deploy>
+		</repo:deploy>
 		<echo>Artifact installed into remote Maven repository at [${alt.maven.repo.url}].</echo>
 	</target>
 	
