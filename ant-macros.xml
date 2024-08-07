@@ -499,6 +499,7 @@ Actual  : ${@{prop.verify.md5.actual}}
 	 -->
 	<target name="install-artifact-remote">
 		<resolver:deploy>
+			<settings file="${alt.maven.settings}"/>
 			<remoterepo id="${alt.maven.repo.id}" url="${alt.maven.repo.url}"/>
 			<pom file="${basedir}/target/${artifactId}-${version}.pom"/>
 			<artifact file="${basedir}/target/${artifactId}-${version}.jar"/>
