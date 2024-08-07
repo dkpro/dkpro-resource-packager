@@ -498,11 +498,11 @@ Actual  : ${@{prop.verify.md5.actual}}
 	 -   target/install-artifact-staging
 	 -->
 	<target name="install-artifact-remote">
-		<resolver:deploy-file repositoryUrl="${alt.maven.repo.url}"
-			repositoryId="${alt.maven.repo.id}"
-			file="${basedir}/target/${artifactId}-${version}.jar"
-			pomFile="${basedir}/target/${artifactId}-${version}.pom"
-			settings="${alt.maven.settings}" />
+		<resolver:deploy>
+			<remoterepo id="${alt.maven.repo.id}" url="${alt.maven.repo.url}"/>
+			<pom file="${basedir}/target/${artifactId}-${version}.pom"/>
+			<artifact file="${basedir}/target/${artifactId}-${version}.jar"/>
+		</resolver:deploy>
 		<echo>Artifact installed into remote Maven repository at [${alt.maven.repo.url}].</echo>
 	</target>
 	
